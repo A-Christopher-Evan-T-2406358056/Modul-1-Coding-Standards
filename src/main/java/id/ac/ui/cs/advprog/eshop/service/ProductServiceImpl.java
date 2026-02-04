@@ -41,4 +41,9 @@ public class ProductServiceImpl implements ProductService{
         return allProduct;
     }
 
+    @Override
+    public void removeById(String id) throws ProductNotFound {
+        productRepository.removeById(id);
+    }
+
 }

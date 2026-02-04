@@ -16,6 +16,7 @@
         <tr>
             <th scope="col" style="width: 45%;">Product Name</th>
             <th scope="col" style="width: 40%;">Quantity</th>
+            <th scope="col" style="width: 15%;">Action</th>
         </tr>
         </thead>
         <tbody>
@@ -26,6 +27,13 @@
 
             <td class="editable" data-field="productQuantity"
                 th:text="${product.productQuantity}"></td>
+            <td>
+                <button class="btn btn-danger btn-sm delete-btn"
+                        onclick="deleteProduct(this)"
+                        th:data-id="${product.productId}">
+                    Delete
+                </button>
+            </td>
         </tr>
         </tbody>
     </table>
@@ -124,6 +132,27 @@
             });
         }
     });
+    async function deleteProduct(button) {
+        const id = button.getAttribute('data-id');
+
+        const IdDto = {
+            id: id
+        };
+
+        $.ajax({
+            url: 'http://localhost:8080/product/api/delete',
+            type: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify(IdDto),
+            success: function(response) {
+                button.parentElement.parentElement.remove();
+            },
+            error: function(xhr) {
+                alert("Error deleting: " + xhr.responseText);
+            }
+        });
+    }
+
 </script>
 </body>
 </html>
