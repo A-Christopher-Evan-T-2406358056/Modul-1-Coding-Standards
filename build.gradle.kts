@@ -59,6 +59,7 @@ tasks.register<Test>("functionalTest") {
     filter {
         includeTestsMatching("*FunctionalTest")
     }
+    systemProperty("wdm.chromeDriverVersion", "144")
 }
 
 tasks.withType<Test>().configureEach {
