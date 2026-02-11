@@ -15,6 +15,14 @@ group = "id.ac.ui.cs.advprog"
 version = "0.0.1-SNAPSHOT"
 description = "eshop"
 
+sonar {
+  properties {
+    property("sonar.projectKey", "A-Christopher-Evan-T-2406358056_Modul-1-Coding-Standards")
+    property("sonar.host.url", "a-christopher-evan-t-2406358056")
+  }
+}
+
+
 java {
     toolchain {
         languageVersion = JavaLanguageVersion.of(21)

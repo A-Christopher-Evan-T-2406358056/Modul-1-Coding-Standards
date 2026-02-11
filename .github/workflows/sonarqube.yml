@@ -52,8 +52,8 @@ jobs:
           java-version: '21'
           distribution: 'temurin'
           cache: gradle
-      - name: Build with Gradle
-        run: gradle build
+      - name: Build Sonar with Gradle
+        run: gradle sonar -Dsonar.token=${{ secrets.SONAR_TOKEN }}
       - name: Analyze with SonarCloud
         # You can pin the exact commit or the version.
         # uses: SonarSource/sonarcloud-github-action@v2.2.0
