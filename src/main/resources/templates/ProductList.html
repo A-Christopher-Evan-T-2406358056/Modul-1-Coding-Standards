@@ -117,7 +117,7 @@
             };
 
             $.ajax({
-                url: '//localhost:8080/product/api/edit',
+                url: '/product/api/edit',
                 type: 'POST',
                 contentType: 'application/json',
                 data: JSON.stringify(productDto),
@@ -140,7 +140,7 @@
         };
 
         $.ajax({
-            url: '//localhost:8080/product/api/delete',
+            url: '/product/api/delete',
             type: 'POST',
             contentType: 'application/json',
             data: JSON.stringify(IdDto),
