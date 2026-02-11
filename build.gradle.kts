@@ -6,9 +6,9 @@ val mockitoAgent = configurations.create("mockitoAgent")
 plugins {
     java
     jacoco
-    id("org.sonarqube") version "3.5.0.2730"
     id("org.springframework.boot") version "4.0.2"
     id("io.spring.dependency-management") version "1.1.7"
+    id("org.sonarqube") version "7.2.2.6593"
 }
 
 group = "id.ac.ui.cs.advprog"
