@@ -31,7 +31,8 @@ name: SonarCloud analysis
 on:
   workflow_run:
     workflows: [ "Continuous Integration (CI)" ]
-    types: [ "completed" ]
+    types:
+      - completed
     branches: [ "main", "module-2-exercise" ]
   workflow_dispatch:
 
