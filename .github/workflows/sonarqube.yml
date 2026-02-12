@@ -33,7 +33,6 @@ on:
     workflows: [ "Continuous Integration (CI)" ]
     types:
       - completed
-    branches: [ "main", "module-2-exercise" ]
   workflow_dispatch:
 
 permissions:
