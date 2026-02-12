@@ -29,9 +29,9 @@
 name: SonarCloud analysis
 
 on:
-  push:
-    branches: [ "main", "module-2-exercise" ]
-  pull_request:
+  workflow_run:
+    workflows: [ "Continuous Integration (CI)" ]
+    types: [ "completed" ]
     branches: [ "main", "module-2-exercise" ]
   workflow_dispatch:
 
@@ -41,7 +41,6 @@ permissions:
 jobs:
   Analysis:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v4
         with:
